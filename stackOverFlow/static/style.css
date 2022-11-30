@@ -1,0 +1,17 @@
+div {
+  width: 50vw;
+  height: 50vh;
+  background-color: orangered;
+  clip-path: polygon(
+    50% 0%,
+    100% 0,
+    100% 54%,
+    78% 46%,
+    57% 56%,
+    37% 47%,
+    19% 56%,
+    0 46%,
+    0 0
+  );
+  border-bottom-left-radius: 3rem;
+}
