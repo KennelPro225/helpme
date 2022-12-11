@@ -1,0 +1,13 @@
+Patient
+Nom
+prenoms
+profession
+Nationalité
+date naissance
+sexe
+résidence habituelle
+situation matrimoniale
+Type population contact téléphonique
+antécédents médicaux
+antécédents chirurgicaux
+antécédents gynécologique

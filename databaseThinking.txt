@@ -1,0 +1,25 @@
+needHelp app Conception:
+
+USER -->
+	username
+	password
+	occupation
+	location	
+	datetime
+POST -->
+	content
+	title
+	author
+	datetime
+COMMENT -->
+
+	content
+	author
+	datetime
+	interaction
+
+INTERACTION -->
+	author
+	post
+	numberOfInteraction
+	
