@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='second.css')}}" />
+    <title>Document</title>
+  </head>
+  <body class="py-6 flex justify-center items-center bg-teal-500 box-border">
+    <div
+      class="w-2/6 bg-teal-700 max-h-111 rounded-l-xl flex justify-center items-center max-md:hidden"
+    >
+      <img
+        src="{{url_for('static',filename='Group 4.png')}}"
+        class="w-11/12 p-2"
+        alt=""
+      />
+    </div>
+    <div
+      class="w-2/5 max-md:w-2300 flex justify-center items-center max-md:rounded-xl max-md:p-4 bg-white max-h-111 rounded-r-xl"
+    >
+    <div>
+      <form
+        
+        method="POST"
+        class="w-max flex justify-evenly"
+      >
+    </ul>
+    
+    <div class="">
+      <h1 class="text-4xl font-bold font-sans text-teal-700 tracking-wider flex justify-center">
+        Connexion
+      </h1>
+      {% with messages = get_flashed_messages(with_categories=True) %} {% if messages %}
+      <ul class="flashes">
+        <!-- <h1>{{messages.message}}</h1> -->
+        {% for message,category in messages %}
+        <li class={{category}}>{{ message }}</li>
+        {% endfor %}
+        {% endif %} {% endwith %}
+          <div class="m-3122 w-80">
+            <label for="mail" class="font-bold text-teal-700">Email</label
+            ><br />
+            <input
+              type="email"
+              class="w-full outline-none text-teal-700 font-sm placeholder:text-blue-200 placeholder:ml-8 max-md:w-80 h-10 rounded-md"
+              placeholder="Email"
+              name="mail"
+            />
+          </div>
+          <div class="m-3122 w-80">
+            <label for="password" class="font-bold text-teal-700"
+              >Password</label
+            ><br />
+            <input
+              type="password"
+              class="w-full text-teal-700 font-sm outline-none placeholder:text-blue-200 placeholder:ml-8 max-md:w-80 h-10 rounded-md"
+              placeholder="Password"
+              name="password"
+            />
+          </div>
+          <div class="flex justify-center">
+          <input
+            type="submit"
+            class="border-red-600 outline-none placeholder:text-blue-200 placeholder:ml-8 border-solid bg-teal-800 text-white w-52 h-12 rounded-xl hover:bg-green-700 cursor-pointer"
+            value="Se Connecter"
+          />
+        </div>
+        </div>
+      </form>
+      <div class="flex justify-end underline mt-2">
+        <small class="text-teal-600"><a href="/signup">Don't you have an Account?</a> </small>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

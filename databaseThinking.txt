@@ -22,4 +22,12 @@ INTERACTION -->
 	author
 	post
 	numberOfInteraction
+
+
+Fonctionnalité
+
+Publication
+like
+commentaire
+
 	

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static',filename='second.css')}}" />
+  
+  <title>Page d'Inscription</title>
+</head>
+
+<body class="py-6 flex justify-center items-center bg-teal-500 box-border">
+  <div class="w-2/6 bg-teal-700 h-2002 rounded-l-xl flex justify-center items-center max-md:hidden">
+    <img src="{{url_for('static',filename='Group 4.png')}}" class="w-11/12 p-2" alt="" />
+  </div>
+  <div
+    class="w-2/5 max-md:w-2300 flex justify-center items-center max-md:rounded-xl max-md:p-4 bg-white h-2002 rounded-r-xl">
+    <div>
+      <form method="POST" class="text-center ">
+        </ul>
+
+        <div class="text-center">
+          <h1 class="text-4xl font-bold font-sans text-teal-700 tracking-wider">
+            Inscription
+          </h1>
+          {% with messages = get_flashed_messages(with_categories=True) %} {% if messages %}
+          <ul class="flashes">
+            <!-- <h1>{{messages.message}}</h1> -->
+            {% for message,category in messages %}
+            <li class={{category}}>{{ message }}</li>
+            {% endfor %}
+            {% endif %} {% endwith %}
+            <div class="m-3122 w-80">
+              <label for="username" class="font-bold text-teal-700">Username</label><br />
+              <input type="text"
+                class="w-96 outline-none bg-white border-teal-600 border placeholder:text-blue-200 placeholder:ml-8 max-md:w-80 h-10 rounded-md"
+                placeholder="Username" name="username" id="username" />
+                <p id="username-result" class="text-xs text-teal-700"></p>
+            </div>
+            <div class="m-3122 w-80">
+              <label for="mail" class="font-bold text-teal-700">Email</label><br />
+              <input type="email"
+                class="w-96 outline-none bg-white border-teal-600 border placeholder:text-blue-200 placeholder:ml-8 max-md:w-80 h-10 rounded-md"
+                placeholder="Email" name="mail" id="mail" />
+            </div>
+            <div class="m-3122 w-80">
+              <label for="password" class="font-bold text-teal-700">Password</label><br />
+              <input type="password"
+                class="w-96 outline-none bg-white border-teal-600 border placeholder:text-blue-200 placeholder:ml-8 max-md:w-80 h-10 rounded-md"
+                placeholder="Password" name="password" />
+            </div>
+            <div class="m-3122 w-80 text-center">
+              <label for="cpassword" class="font-bold text-teal-700">Confirm Password</label><br />
+              <input type="password"
+                class="w-96 outline-none bg-white border-teal-600 border placeholder:text-blue-200 placeholder:ml-8 max-md:w-80 h-10 rounded-md"
+                placeholder="Confirm password" name="cpassword" o/>
+            </div>
+            <input type="submit"
+              class="border-red-600 outline-none placeholder:text-blue-200 placeholder:ml-8 border-solid bg-teal-800 text-white w-52 h-12 rounded-xl hover:bg-green-700 cursor-pointer"
+              value="S'inscrire" />
+        </div>
+      </form>
+      <div class="flex justify-end mt-2">
+        <small class="text-teal-600 underline"><a href="/signin">Have you already an account?</a> </small>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script> -->
+<script>
+ $('#username').on('input', function() {
+  var username = $(this).val();
+  $.ajax({
+    url: '/check',
+    type: 'POST',
+    data: { 'username': username },
+    success: function(response) {
+      $('#username-result').text('This username is already used. Please choose another one');
+      console.log(response)
+    },
+    error: function(error) {
+      $('#username-result').empty()
+    }
+  });
+});
+</script>
+
+</html>
