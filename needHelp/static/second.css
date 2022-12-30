@@ -1,7 +1,18 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-.info{
-    color: green;
+.info {
+  color: green;
 }
+#cover {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#postProfile{
+  overflow: auto;
+  /* overflow-y: scroll; */
+}
+/* .w-full{
+  width: 100%;
+} */

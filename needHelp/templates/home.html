@@ -1,4 +1,13 @@
-{% extends "layout.html" %}
-{%block content%}
-{{username}}
+{% extends "layout.html" %} {%block content%}
+<div class="w-full flex justify-center items-center">
+    <div class="md:flex md:justify-evenly md:items-center">
+  <button class="w-50 h-10 rounded-lg bg-teal-700 text-white">
+    Ask a New Help
+  </button>
+  <div class="flex items-center bg-teal-600 border rounded-lg border-teal-600">
+    <input class="w-52 h-10 outline-none rounded-lg placeholder:text-xs" type="text" placeholder="Type here to find a problem to solve" />
+    <button class="border-l border-teal-600 h-10 rounded-r-lg bg-teal-600 text-white">Search</button>
+  </div>
+</div>
+</div>
 {%endblock content%}

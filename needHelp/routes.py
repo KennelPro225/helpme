@@ -1,5 +1,5 @@
-from needHelp import app, bcrypt, db
 from flask import render_template, redirect, request, flash, url_for
+from needHelp import app, bcrypt, db
 from needHelp.models import User
 import requests
 import json
@@ -39,21 +39,21 @@ def SignIn():
     return render_template('login.html')
 
 
-@app.route('/check',methods=['POST'])
+@app.route('/check', methods=['POST'])
 def check():
     username = request.form['username']
     existing_user = User.query.filter_by(username=username).all()
-    ex=[]
+    ex = []
 
     for i in existing_user:
         ex.append({'name': i.username,
                   'email': i.email})
-    if len(ex)>0:
+    if len(ex) > 0:
         return json.dumps(ex)
-    else: 
+    else:
         return False
 
 
-@app.route('/share')
+@app.route('/profile')
 def Share():
-    pass
+    return render_template('profile.html', back='Background.jpeg')

@@ -1,0 +1,46 @@
+{% extends "layout.html" %} {%block content%}
+<div class="w-full h-full flex justify-center">
+  <div class="w-full h-full">
+    <div class="flex justify-center">
+      <div class="rounded-lg border border-teal-700 w-900 h-80" id="cover">
+        <div class="flex justify-center items-center h-full w-full">
+          <div
+            id="profilePic"
+            class="max-md:w-50 max-md:h-50 md:w-60 md:h-60 rounded-full"
+          >
+            <img
+              src="{{url_for('static',filename='A3.jpg')}}"
+              class="h-full w-full rounded-full"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="identity text-center pt-4 text-xl font-bold text-purple-900">
+      KASSI Kennel
+    </div>
+    <div class="w-full flex justify-center pt-6">
+      <div class="w-96 flex justify-evenly">
+        <div class="position text-lg text-teal-600 font-bold">Teacher</div>
+        <div class="nationality text-lg text-teal-600 font-bold">
+          Ivory Coast
+        </div>
+      </div>
+    </div>
+    <div class="w-full flex justify-center">
+      <div
+        id="postProfile"
+        class="w-900 border border-teal-700 h-110 rounded-lg"
+      ></div>
+    </div>
+  </div>
+</div>
+<script>
+  const cover = document.querySelector("#cover");
+  const back = `{{back}}`;
+  console.log(`${back}`);
+  cover.style = `background-image: url('/static/${back}');`;
+  console.log(cover.style);
+</script>
+{%endblock content%}

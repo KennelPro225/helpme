@@ -11,6 +11,8 @@ class User(db.Model):
     password = db.Column('password', db.String, nullable=False)
     photoprofile = db.Column(
         'profilepicture', db.String, default='default.png')
+    coverpicture = db.Column(
+        'coverpicture', db.String, default='default.png')
     occupation = db.Column('occupation', db.Integer)
     location = db.Column('location', db.Integer)
     date = db.Column('date', db.DateTime, default=datetime.utcnow())
